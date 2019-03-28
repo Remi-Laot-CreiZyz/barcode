@@ -1,0 +1,344 @@
+/* Début du test link */
+.titrefirstaccueil{
+	color: #53714B;
+	text-align: center;
+	font-size: 55px;
+	font-family: 'Poppins', sans-serif;
+	padding-top: 30px;
+}
+.textfirstaccueil{
+	color: #53714B;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Muli', sans-serif;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 5%;
+	margin-bottom: 8%;
+}
+
+.linkfirstaccueil{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Muli', sans-serif;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 5%;
+	vertical-align: middle;
+}
+
+.divlink{
+	text-align: center;
+	width: 70%;
+	height: 150px;
+	background-color: #0A5C7C;
+	border-radius: 100px;
+	margin: auto;
+	vertical-align: middle;
+	padding: 4%;
+}
+/* Fin du test link */
+/* Début ProgressBar*/
+#myProgress {
+  width: 100%;
+  background-color: #cccccc;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #a8d673;
+}
+/* Fin ProgressBar */
+.navbar.navbar-expand.navbar-light.bg-light{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	height: 150px;
+	background-color: #F8F8F8;
+}
+
+.ligne_verticale_index
+{
+    width:5px;
+    border-left:1px solid gray;
+    height:90px;
+}
+
+.nav-item{
+	text-align: center;
+	padding-right: 35px;
+	padding-left: 35px;
+	vertical-align: center;
+	font-size: 40px;
+	display: flex;
+}
+
+.nav-link{
+	display:inline-block;
+	margin-left:5px;
+	padding: 5px 10px;
+	text-decoration:none;
+	vertical-align: center;
+}
+
+.collapse.navbar-collapse{
+	text-align: center;
+}
+
+#navbarSupportedContent{
+	justify-content: center;
+}
+
+.fas{
+	font-size: 90px;
+}
+
+.fas-sec{
+	color: #cccccc;
+}
+
+.fas-center{
+	color: #a8d673;
+}
+
+.header{
+	background-color: #0A5C7C;
+	height: 150px;
+	margin-bottom: 10px;
+}
+
+.text-header{
+	text-align: center;
+	font-size: 60px;
+	padding-top: 4%;
+	font-family: 'Moli', sans-serif;
+	color: white;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+.text-quisommesnous{
+	font-size: 40px;
+	font-family: 'Moli', sans-serif;
+	margin: 30px;
+	text-align: justify;
+}
+
+.btn.btn-link{
+	font-size: 50px;
+	font-family: 'Moli', sans-serif;
+	color: #aaaaaa;
+	background-color: #F8F8F8;
+}
+
+.btn.btn-link:hover{
+	color: #53714B;
+	text-decoration: none;
+}
+#interrogation-logo{
+	font-size: 50px;
+	padding-right: 25px;
+}
+
+.ligne_verticale_info{
+	display: inline;
+	padding: 10px;
+	width: 5px;
+	border-left:1px solid gray;
+	height: 90px;
+}
+
+#hand-icon{
+	font-size: 40px;
+	padding-right: 15px;
+}
+
+.bodyinfo{
+	background-color: #53714B;
+}
+
+.card{
+	margin: 40px 60px;
+	vertical-align: middle;
+	border-radius: 1rem!important;
+}
+
+.question{
+	font-variant: small-caps;
+	font-size: 50px;
+	color: #53714B;
+}
+
+.reponse{
+	font-size: 35px;
+}
+
+.logo{
+	width: 290px;
+	margin: 40px;
+}
+
+.headeraccueil{
+	text-align: center;
+}
+
+.fruitlegume{
+	width: 100%;
+}
+
+/* CSS FIRSTCON.html */
+
+.titrefirstcon{
+	color: #53714B;
+	text-align: center;
+	font-size: 60px;
+	font-family: 'Muli', sans-serif;
+}
+
+.textefirstcon{
+	color: #B8B6B6;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Muli', sans-serif;
+}
+
+.divform{
+	padding: 10%;
+}
+
+.form-control.form-control-lg{
+	font-size: 30px;
+	padding: 2%;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.password{
+	color: #53714B;
+	text-transform: uppercase;
+	font-size: 40px;
+	letter-spacing: 5px;
+	margin-top: 5%;
+}
+
+.email{
+	color: #53714B;
+	text-transform: uppercase;
+	font-size: 40px;
+	letter-spacing: 5px;
+	margin-top: 5%;
+}
+
+.btninscription{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Muli', sans-serif;
+	margin-top: 2%;
+	vertical-align: middle;
+}
+
+.divlinkinscription{
+	text-align: center;
+	width: 100%;
+	height: 120px;
+	background-color: #0A5C7C;
+	border-radius: 100px;
+	margin-top: 10%;
+	vertical-align: middle;
+}
+
+.fas.fa-envelope{
+	font-size: 40px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.fas.fa-key{
+	font-size: 40px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.lien{
+	color: #53714B;
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Muli', sans-serif;
+}
+
+.divlien{
+	padding: 10%;
+	text-align: center;
+}
+
+.lien:hover{
+	text-decoration: none;
+	color: #cccccc;
+}
+
+/* COMPTE.HTML*/
+
+.superposition{
+	position: relative;
+	height:800px;
+	text-align: center;
+	background-color: #53714B;
+}
+
+.imagefond{
+	position: absolute;
+	z-index: 1;
+}
+
+.imagechamps{
+	opacity: 0.3;
+	height: 800px;
+	width: 100%;
+	background-color: #53714B;
+}
+
+.textmoncompte{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	z-index: 2;
+}
+
+.vert{
+	background-color: #53714B;
+	height: 800px;
+	width: 100%;
+}
+
+.imgcompte{
+	width: 300px;
+	margin-top: 10%;
+}
+
+.moncompte{
+	font-size: 400%;
+	color: white;
+}
+
+.infocompte{
+	font-size: 300%;
+	color: white;
+	font-family: 'Moli'sans-serif;
+}
+
+.accordion-compte{
+	background-color: #53714B;
+	border-color: #53714B;
+	vertical-align: middle;
+	border-top: 20%;
+	border-bottom: 20%;
+}
+
+.bodycompte{
+	background-color: #53714B;
+}
