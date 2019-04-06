@@ -1,95 +1,125 @@
 <template>
   <div id="app">
-    <div class="header">
-      <div class="text-header">Follow'up</div>
+    <div id="header">
+      <div id="text-header">Follow'up</div>
     </div>
-    <router-view/>
-    <b-navbar id="navbar">
-      <b-navbar-nav>
-        <b-nav-item v-for="(section) in sections" :key="section.id" :to="section.link" v-bind:class="section.class">
-          <font-awesome-icon class="nav-icon" :icon="section.icon"/>
-        </b-nav-item>
-      </b-navbar-nav>
-    </b-navbar>
+    <div id="content">
+      <router-view/>
+    </div>
+    <div id="nav-bar">
+      <router-link
+        v-for="(section) in sections"
+        :key="section.id"
+        :to="section.link"
+        v-bind:class="['nav-link', section.class]"
+      >
+        <font-awesome-icon class="nav-icon" :icon="section.icon"/>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        sections : [
-        { id : 0, class : "secondary", icon : "user",     color : "#2c3e50", link : "/compte" },
-        { id : 1, class : "secondary", icon : "history",  color : "#2c3e50", link : "/history" },
-        { id : 2, class : "main",      icon : "barcode",  color : "#a8d673", link : "/" },
-        { id : 3, class : "secondary", icon : "question", color : "#2c3e50", link : "/premium" },
-        { id : 4, class : "secondary", icon : "plus",     color : "#2c3e50", link : "/info" },]
-      }
-    },
-    components: {}
-  }
+export default {
+  data() {
+    return {
+      sections: [
+        {
+          id: 0,
+          class: "secondary",
+          icon: "user",
+          color: "#2c3e50",
+          link: "/compte"
+        },
+        {
+          id: 1,
+          class: "secondary",
+          icon: "history",
+          color: "#2c3e50",
+          link: "/history"
+        },
+        { id: 2, class: "main", icon: "barcode", color: "#a8d673", link: "/" },
+        {
+          id: 3,
+          class: "secondary",
+          icon: "question",
+          color: "#2c3e50",
+          link: "/premium"
+        },
+        {
+          id: 4,
+          class: "secondary",
+          icon: "plus",
+          color: "#2c3e50",
+          link: "/info"
+        }
+      ]
+    };
+  },
+  components: {}
+};
 </script>
 
 
 <style lang="scss">
 
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+// ===== GENERAL APP STYLING ===== 
 
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  #navbar{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    background-color: #F8F8F8;
-    justify-content: center;
-  }
+// ===== HEADER STYLING ===== 
 
-  .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+#header {
+  background-color: #0a5c7c;
+}
+#text-header {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: white;
+  letter-spacing: 0.33rem;
+  text-transform: uppercase;
+}
 
-  .nav-item{
-    font-size: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+// ===== CONTENT STYLING ===== 
 
-  .nav-icon {
-    color: #2c3e50;
-  }
+#content {
+  flex-grow: 1;
+  overflow: scroll;
+}
 
-  .main .nav-icon {
-    font-size: 2rem;
-  }
+// ===== NAVBAR STYLING ===== 
 
-  .nav-link.router-link-exact-active .nav-icon {
-    color: #42b983;
-  }
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f8f8f8;
+}
 
+.nav-icon {
+  color: #2c3e50;
+}
 
+.main .nav-icon {
+  font-size: 2rem;
+}
 
+.router-link-exact-active .nav-icon {
+  color: #42b983;
+}
 
-
-  .header{
-    background-color: #0A5C7C;
-  }
-  .text-header{
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 1rem;
-    color: white;
-    letter-spacing: 0.33rem;
-    text-transform: uppercase;
-  }
+// ===== END STYLING ===== 
 
 </style>

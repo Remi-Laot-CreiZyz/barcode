@@ -1,38 +1,38 @@
 <template>
 <div class="body">
-  <div role="tablist" class="accordion">
+  <div class="accordion">
     <b-card no-body class="mb-1 cardPos">
-      <b-card-header header-tag="header" class="p-1" role="tab">
+      <b-card-header header-tag="header" class="p-1">
         <b-button block href="#" v-b-toggle.accordion1 variant="light"><strong class="btnColor"><div class="vertical">|</div>Qui sommes-nous</strong></b-button>
       </b-card-header>
-      <b-collapse id="accordion1" visible accordion="my-accordion" role="tabpanel">
+      <b-collapse id="accordion1" visible accordion="my-accordion">
         <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
       </b-collapse>
     </b-card>
 
     <b-card no-body class="mb-1 cardPos">
-      <b-card-header header-tag="header" class="p-1" role="tab">
+      <b-card-header header-tag="header" class="p-1">
         <b-button block href="#" v-b-toggle.accordion2 variant="light" class="btnPos"><strong class="btnColor border"><div class="vertical">|</div>Nos entreprises partenaires</strong></b-button>
       </b-card-header>
-      <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
+      <b-collapse id="accordion2" accordion="my-accordion">
         <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
       </b-collapse>
     </b-card>
 
     <b-card no-body class="mb-1 cardPos">
-      <b-card-header header-tag="header" class="p-1" role="tab">
+      <b-card-header header-tag="header" class="p-1">
         <b-button block href="#" v-b-toggle.accordion3 variant="light"><strong class="btnColor"><div class="vertical">|</div>FAQ</strong></b-button>
       </b-card-header>
-      <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
+      <b-collapse id="accordion3" accordion="my-accordion">
         <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
       </b-collapse>
     </b-card>
 
     <b-card no-body class="mb-1 cardPos">
-      <b-card-header header-tag="header" class="p-1" role="tab">
+      <b-card-header header-tag="header" class="p-1">
         <b-button block href="#" v-b-toggle.accordion4 variant="light"><strong class="btnColor"><div class="vertical">|</div>Nous contacter</strong></b-button>
       </b-card-header>
-      <b-collapse id="accordion4" accordion="my-accordion" role="tabpanel">
+      <b-collapse id="accordion4" accordion="my-accordion">
         <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
       </b-collapse>
     </b-card>
