@@ -27,6 +27,9 @@ library.add(faCoffee,
             faBarcode)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+import VDivider from '@/components/VDivider.vue';
+Vue.component('vdivider', VDivider);
+
 // Bootstrap
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'

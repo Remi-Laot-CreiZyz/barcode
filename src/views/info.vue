@@ -1,17 +1,15 @@
 <template>
 <div class="body">
-  <v-expander title="TITRE 1">
-    {{text}}
-  </v-expander>
+  <v-expander></v-expander>
 </div>
 </template>
 
 <script>
-  import Expander from '@/components/Expander.vue'
+  import Accordion from '@/components/Accordion.vue'
 
   export default {
     components : {
-      'v-expander' : Expander
+      'v-expander' : Accordion
     },
     data() {
       return {

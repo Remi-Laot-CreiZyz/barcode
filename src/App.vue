@@ -96,6 +96,12 @@ export default {
 #content {
   flex-grow: 1;
   overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+#content>* {
+  flex-grow: 1;
 }
 
 // ===== NAVBAR STYLING ===== 

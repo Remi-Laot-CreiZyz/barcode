@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <HelloWorld/>
-  </div>
-  
+    <scanner/>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import QuaggaScanner from '@/components/QuaggaScanner.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    "scanner" : QuaggaScanner
   }
 }
 </script>
