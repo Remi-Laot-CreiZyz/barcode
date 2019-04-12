@@ -1,126 +1,58 @@
 <template>
-  <div class="expander">
-    <div
-      class="trigger"
-      @click="$emit('expanderTriggered')"
-      :class="open?'active':'inactive'"
-    >
-      <slot name="header">
-        <div class="default-header">
-          <font-awesome-icon v-if="logo != ''" :icon="logo"/>
-          <fu-divider v-if="logo != ''"/>
-          {{ title }}
-        </div>
-      </slot>
-    </div>
-    <transition
-      enter-active-class="enter-active"
-      leave-active-class="leave-active"
-      @before-enter="beforeEnter"
-      @enter="enter"
-      @after-enter="afterEnter"
-      @before-leave="beforeLeave"
-      @leave="leave"
-      @after-leave="afterLeave"
-    >
-      <div v-if="open">
-        <slot name="content">
-          <div class="default-content">
-            <slot></slot>
-          </div>
-        </slot>
+  <fu-expander-internal
+    v-on:click-on-expander="stateChange"
+    :open="expanded"
+    class="fu-expander"
+  >
+    <template v-slot:header>
+      <fu-section-button class="fu-expander-header" :icon='icon' :title='title'/>
+    </template>
+    <template v-slot:content>
+      <div class="fu-expander-content">
+        <slot/>
       </div>
-    </transition>
-  </div>
+    </template>
+  </fu-expander-internal>
 </template>
 
 <script>
+import ExpanderInternal from "@/components/ExpanderInternal.vue";
+
 export default {
-  name: "Expander",
+  components: {
+    "fu-expander-internal": ExpanderInternal
+  },
   props: {
     title: {
       type: String,
-      default: "title"
+      default: "title",
+      required: true
     },
-    logo: {
+    icon: {
       type: String,
-      default: ""
-    },
-    open: {
-      type: Boolean,
-      default: false
+      default: "question",
+      required: true
     }
   },
+  data() {
+    return {
+      expanded: false
+    };
+  },
   methods: {
-    beforeEnter(element) {
-      requestAnimationFrame(() => {
-        if (!element.style.height) {
-          element.style.height = "0px";
-        }
-        element.style.display = null;
-      });
-    },
-    enter(element) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          element.style.height = `${element.scrollHeight}px`;
-        });
-      });
-    },
-    afterEnter(element) {
-      element.style.height = null;
-    },
-    beforeLeave(element) {
-      requestAnimationFrame(() => {
-        if (!element.style.height) {
-          element.style.height = `${element.offsetHeight}px`;
-        }
-      });
-    },
-    leave(element) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          element.style.height = "0px";
-        });
-      });
-    },
-    afterLeave(element) {
-      element.style.height = null;
+    stateChange() {
+      this.expanded = !this.expanded;
     }
   }
 };
 </script>
 
 <style lang="scss">
-.expander {
-  background-color: rebeccapurple;
+.fu-expander-header {
+  margin-bottom: 0;
 }
-
-.trigger {
-  background-color: aqua;
-}
-
-.content {
-  background-color: yellow;
-}
-
-.default-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0.25rem;
-  font-size: 1.25rem;
-}
-
-.default-header .divider {
-  height: 1.5rem;
-  margin-left: .5rem;
-  margin-right: .5rem;
-}
-
-.enter-active,
-.leave-active {
-  overflow: hidden;
-  transition: height 0.25s linear;
+.fu-expander-content {
+  background-color: #ebffe6;
+  margin: 0.5rem 5px 0.5rem 5px;
 }
 </style>

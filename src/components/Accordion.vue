@@ -1,26 +1,26 @@
 <template>
   <div class="expander-group">
-    <v-expander
+    <fu-expander-internal
       v-for="(section, index) in sections"
       v-bind:key="index"
       v-on:expanderTriggered="clickedOn(index)"
-      :logo="section.logo"
+      :icon="section.logo"
       :title="section.title"
       :open="expanded[index]"
-    >{{ section.text }}</v-expander>
+    >{{ section.text }}</fu-expander-internal>
   </div>
 </template>
 
 <script>
-import Expander from "@/components/Expander.vue";
+import ExpanderInternal from "@/components/ExpanderInternal.vue";
 
 export default {
   components: {
-    "v-expander": Expander
+    "fu-expander-internal": ExpanderInternal
   },
   methods: {
     clickedOn(index) {
-      var tmp = this.expanded[index];
+      var tmp = this.expanded[index] | false;
       this.expanded = this.sections.forEach(() => false);
       this.expanded[index] = !tmp;
     }
@@ -53,7 +53,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          logo: "",
+          logo: "question",
           title: "FAQ",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -65,7 +65,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          logo: "",
+          logo: "envelope",
           title: "Nous contacter",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -77,7 +77,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         }
       ],
-      expanded: []
+      expanded: [false, false, false, false]
     };
   }
 };

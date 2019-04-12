@@ -98,6 +98,7 @@ export default {
   overflow: scroll;
   display: flex;
   flex-direction: row;
+  margin: 0.5rem;
 }
 
 #content>* {

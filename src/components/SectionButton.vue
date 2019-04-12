@@ -31,7 +31,8 @@ export default {
   background-color: #f5f5f5;
   color: #a5a5a5;
 
-  margin: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.25rem;
   font-size: 1rem;
   border-radius: 5px;
@@ -49,14 +50,13 @@ export default {
   cursor: pointer;
 }
 
+.active .fu-section-button, .fu-section-button.active {
+  color: #53714B;
+}
+
 .fu-section-button:active {
   background-color: #53714B;
   color: #e2e2e2;
-}
-
-.active .fu-section-button, .fu-section-button.active {
-  background-color: #e2e2e2;
-  color: #53714B;
 }
 
 .fu-section-button-icon-container {
