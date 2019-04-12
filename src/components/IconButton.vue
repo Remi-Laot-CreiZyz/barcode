@@ -37,7 +37,7 @@ export default {
 }
 
 .fu-icon-button:active {
-  background-color: #e2e2e2;
-  color: white;
+  background-color: #53714B;
+  color: #e2e2e2;
 }
 </style>

@@ -17,6 +17,7 @@ import { faCoffee,
          faHistory,
          faPlus,
          faBarcode,
+         faLock,
          faTimes } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faCoffee,
@@ -26,6 +27,7 @@ library.add(faCoffee,
             faHistory,
             faPlus,
             faBarcode,
+            faLock,
             faTimes)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -38,8 +40,10 @@ Vue.use(BootstrapVue)
 
 import Button from "@/components/Button.vue";
 import IconButton from '@/components/IconButton.vue';
+import SectionButton from '@/components/SectionButton.vue';
 import VDivider from '@/components/VDivider.vue';
 
+Vue.component("fu-section-button", SectionButton);
 Vue.component("fu-icon-button", IconButton);
 Vue.component("fu-button", Button);
 Vue.component('fu-divider', VDivider);

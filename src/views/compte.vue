@@ -6,6 +6,8 @@
       <fu-button><font-awesome-icon icon="question"/></fu-button>
       <fu-icon-button icon="times"/>
       <fu-icon-button icon="question"/>
+      <fu-section-button icon="question" title="FAQ"/>
+      <fu-section-button icon="lock" title="Déconnexion"/>
   </div>
 </template>
 

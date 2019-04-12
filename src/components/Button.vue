@@ -33,6 +33,7 @@ export default {
 }
 
 .fu-button:active {
-  background-color: #3fc1f5;
+  background-color: #53714B;
+  color: #e2e2e2;
 }
 </style>
