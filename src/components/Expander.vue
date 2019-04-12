@@ -52,7 +52,8 @@ export default {
   margin-bottom: 0;
 }
 .fu-expander-content {
-  background-color: #ebffe6;
   margin: 0.5rem 5px 0.5rem 5px;
+  border-left: 2px solid #53714B;
+  padding-left: 0.5rem;
 }
 </style>
