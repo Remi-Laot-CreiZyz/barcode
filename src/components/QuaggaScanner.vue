@@ -136,15 +136,8 @@ export default {
       }
     },
     onDetected : function(result) {
-      // console.log(result);
       if (result) {
-        var str = "" + result.codeResult.code;
-        var code = {
-          pays : str.substring(0, 1),
-          entreprise : str.substring(1).substring(0, str.length / 2 - 1),
-          produit : str.substring(1).substring(str.length / 2, str.length - 1),
-        }
-        console.log(code);
+        this.$emit("scanned", result.codeResult.code);
       }
     },
   }

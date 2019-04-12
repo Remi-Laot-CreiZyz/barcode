@@ -1,6 +1,6 @@
 <template>
   <div class="fu-icon-button">
-    <font-awesome-icon :icon="icon"/>
+    <font-awesome-icon @click='$emit("click")' :icon="icon"/>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-      <p>Ceci est la page Prenium !</p>
+      <p>Ceci est la page Premium !</p>
   </div>
 </template>
 

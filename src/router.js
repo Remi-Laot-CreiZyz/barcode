@@ -4,7 +4,8 @@ import Home from './views/Home.vue'
 import info from './views/info.vue'
 import compte from './views/compte.vue'
 import history from './views/history.vue'
-import prenium from './views/prenium.vue'
+import premium from './views/premium.vue'
+import details from '@/views/Details.vue'
 
 Vue.use(Router)
 
@@ -31,19 +32,14 @@ export default new Router({
       component: history
     },
     {
-      path: '/prenium',
-      name: 'prenium',
-      component: prenium
+      path: '/premium',
+      name: 'premium',
+      component: premium
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/About.vue')
-      }
-    }
+      path: '/details/:code',
+      name: 'details',
+      component: details
+    },
   ]
 })

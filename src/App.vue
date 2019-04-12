@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <div id="header">
       <div id="text-header">Follow'up</div>
     </div>
@@ -15,6 +15,10 @@
       >
         <font-awesome-icon class="nav-icon" :icon="section.icon"/>
       </router-link>
+      <div class="nav-link">
+        <font-awesome-icon class="nav-icon" @click="toggle" v-if='!fullscreen' icon="expand-arrows-alt"/>
+        <font-awesome-icon class="nav-icon" @click="toggle" v-if='fullscreen' icon="compress-arrows-alt"/>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +27,7 @@
 export default {
   data() {
     return {
+      fullscreen: false,
       sections: [
         {
           id: 0,
@@ -56,6 +61,17 @@ export default {
       ]
     };
   },
+  methods: {
+    toggle () {
+      this.$fullscreen.toggle(this.$refs.app, {
+        wrap: false,
+        callback: this.fullscreenChange
+      })
+    },
+    fullscreenChange (fullscreen) {
+      this.fullscreen = fullscreen
+    }
+  },
   components: {}
 };
 </script>
@@ -68,7 +84,9 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: white;
 }
+
 
 // ===== HEADER STYLING ===== 
 
@@ -82,6 +100,13 @@ export default {
   color: white;
   letter-spacing: 0.33rem;
   text-transform: uppercase;
+}
+
+.header-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  color: white;
 }
 
 // ===== CONTENT STYLING ===== 

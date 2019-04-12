@@ -1,62 +1,84 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import './registerServiceWorker'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import Vuex from "vuex";
+import "./registerServiceWorker";
 
-import "@/assets/global.scss"
+Vue.use(Vuex);
 
-import UUID from 'vue-uuid'
+import "@/assets/global.scss";
 
-Vue.use(UUID)
+import fullscreen from "vue-fullscreen";
+Vue.use(fullscreen);
+
+import UUID from "vue-uuid";
+Vue.use(UUID);
 
 // Fontawesome
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCoffee,
-         faQuestion,
-         faHandshake,
-         faUser,
-         faHistory,
-         faPlus,
-         faBarcode,
-         faLock,
-         faTimes, 
-         faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faCoffee,
+  faQuestion,
+  faHandshake,
+  faUser,
+  faHistory,
+  faPlus,
+  faBarcode,
+  faLock,
+  faTimes,
+  faEnvelope,
+  faArrowLeft,
+  faExpandArrowsAlt,
+  faCompressArrowsAlt
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCoffee,
-            faQuestion,
-            faHandshake,
-            faUser,
-            faHistory,
-            faPlus,
-            faBarcode,
-            faLock,
-            faEnvelope,
-            faTimes)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+library.add(
+  faCoffee,
+  faQuestion,
+  faHandshake,
+  faUser,
+  faHistory,
+  faPlus,
+  faBarcode,
+  faLock,
+  faEnvelope,
+  faExpandArrowsAlt,
+  faCompressArrowsAlt,
+  faTimes,
+  faArrowLeft
+);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 // Bootstrap
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import BootstrapVue from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 
 import Button from "@/components/Button.vue";
-import IconButton from '@/components/IconButton.vue';
-import SectionButton from '@/components/SectionButton.vue';
-import VDivider from '@/components/VDivider.vue';
-import Expander from '@/components/Expander.vue';
+import IconButton from "@/components/IconButton.vue";
+import SectionButton from "@/components/SectionButton.vue";
+import Expander from "@/components/Expander.vue";
+import CodeViewer from "@/components/CodeViewer.vue";
+import ProductImage from "@/components/ProductImage.vue";
+import store from "./store";
 
+Vue.component("fu-product-image", ProductImage);
 Vue.component("fu-expander", Expander);
 Vue.component("fu-section-button", SectionButton);
 Vue.component("fu-icon-button", IconButton);
 Vue.component("fu-button", Button);
-Vue.component('fu-divider', VDivider);
+Vue.component("fu-code-viewer", CodeViewer);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+  store,
+
+  render: function(h) {
+    return h(App);
+  }
+}).$mount("#app");

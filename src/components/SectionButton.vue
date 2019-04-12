@@ -1,6 +1,6 @@
 <template>
   <div class="fu-section-button">
-    <div class="fu-section-button-icon-container">
+    <div class="fu-section-button-icon-container" @click='$emit("click")'>
       <font-awesome-icon :icon="icon"/>
     </div>
     | {{ title }}
