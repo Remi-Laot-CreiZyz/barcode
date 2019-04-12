@@ -9,7 +9,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fu-button {
   margin: 0.5rem;
   padding: 0.25rem 2rem 0.25rem 2rem;

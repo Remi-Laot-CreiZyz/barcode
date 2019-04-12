@@ -92,8 +92,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.fu-expander-group .fu-expander-content {
-
+<style lang="scss" scoped>
+.fu-expander-content {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: 2px solid #53714B;
+  padding-left: 0.5rem;
 }
 </style>

@@ -7,7 +7,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .divider {
     border-left: 1px solid #2c3e50;
     margin-left:  0.25rem;

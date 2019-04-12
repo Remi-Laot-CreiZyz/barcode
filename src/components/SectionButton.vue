@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fu-section-button {
   display: flex;
   flex-direction: row;

@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fu-icon-button {
   width:  2rem;
   height: 2rem;

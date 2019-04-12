@@ -47,12 +47,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.fu-expander-header {
-  margin-bottom: 0;
-}
+<style lang="scss" scoped>
 .fu-expander-content {
-  margin: 0.5rem 5px 0.5rem 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-left: 2px solid #53714B;
   padding-left: 0.5rem;
 }
