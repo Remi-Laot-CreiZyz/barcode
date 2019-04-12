@@ -21,7 +21,7 @@ export default {
   methods: {
     clickedOn(index) {
       var tmp = this.expanded[index];
-      this.expanded = this.sections.map(_ => false);
+      this.expanded = this.sections.forEach(() => false);
       this.expanded[index] = !tmp;
     }
   },

@@ -8,7 +8,7 @@
       <slot name="header">
         <div class="default-header">
           <font-awesome-icon v-if="logo != ''" :icon="logo"/>
-          <vdivider v-if="logo != ''"/>
+          <fu-divider v-if="logo != ''"/>
           {{ title }}
         </div>
       </slot>
