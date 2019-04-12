@@ -22,6 +22,7 @@ export default {
   font-size: 1.5rem;
   border-radius: 50%;
   color: #a5a5a5;
+  text-align: center;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

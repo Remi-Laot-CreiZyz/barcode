@@ -1,13 +1,21 @@
 <template>
-  <div class="expander-group">
+  <div class="fu-expander-group">
     <fu-expander-internal
-      v-for="(section, index) in sections"
+      v-for="(item, index) in sections"
       v-bind:key="index"
-      v-on:expanderTriggered="clickedOn(index)"
-      :icon="section.logo"
-      :title="section.title"
+      v-on:click-on-expander="stateChange(index)"
       :open="expanded[index]"
-    >{{ section.text }}</fu-expander-internal>
+      class="fu-expander"
+    >
+      <template v-slot:header>
+        <fu-section-button class="fu-expander-header" :icon='item.icon' :title='item.title'/>
+      </template>
+      <template v-slot:content>
+        <div class="fu-expander-content">
+          <p>{{ item.text }}</p>
+        </div>
+      </template>
+    </fu-expander-internal>
   </div>
 </template>
 
@@ -18,18 +26,12 @@ export default {
   components: {
     "fu-expander-internal": ExpanderInternal
   },
-  methods: {
-    clickedOn(index) {
-      var tmp = this.expanded[index] | false;
-      this.expanded = this.sections.forEach(() => false);
-      this.expanded[index] = !tmp;
-    }
-  },
   data() {
     return {
+      expanded: [false, false, false, false],
       sections: [
         {
-          logo: "question",
+          icon: "question",
           title: "Qui sommes nous",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -41,7 +43,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          logo: "plus",
+          icon: "plus",
           title: "Nos entreprises partenaires",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -53,7 +55,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          logo: "question",
+          icon: "question",
           title: "FAQ",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -65,7 +67,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          logo: "envelope",
+          icon: "envelope",
           title: "Nous contacter",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -76,14 +78,22 @@ export default {
                   vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         }
-      ],
-      expanded: [false, false, false, false]
+      ]
     };
+  },
+  methods: {
+    stateChange(index) {
+      var tmp = this.expanded[index];
+      // this.expanded = this.sections.forEach(() => false);
+      this.expanded = [false, false, false, false];
+      this.expanded[index] = !tmp;
+    }
   }
 };
 </script>
 
 <style lang="scss">
+.fu-expander-group .fu-expander-content {
+
+}
 </style>
-
-

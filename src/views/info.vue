@@ -28,33 +28,4 @@
   }
 </script>
 <style lang="scss">
-.body{
-  background-color: #53714B;
-  height: 100vh;
-}
-.accordion{
-	vertical-align: middle;
-	padding-top: 7%;
-}
-.btnPos{
-  text-align: left;
-}
-.btnColor{
-  color: #aaaaaa;
-  background-color: #F8F8F8;
-}
-.btnColor:hover{
-  color: #53714B;
-  text-decoration: none;
-}
-.cardPos{
-  margin: 4% 7% 4% 7%;
-}
-.border{
-  border-radius: 50px;
-}
-.vertical{
-  display: inline-block;
-  padding-right: 5%;
-}
 </style>
