@@ -60,53 +60,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 // ===== GENERAL APP STYLING ===== 
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.fu-center {
-  text-align: center;
-}
-
-.fu-quote {
-  font-size: .95rem;
-  font-style: italic;
-  color: #a5a5a5;
-  margin-top:    0.25rem;
-  margin-bottom: 0.25rem;
-  text-align: center;
-}
-
-.fu-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #53714B;
-  margin-top:    1rem;
-  margin-bottom: 0.5rem;
-}
-
-.fu-subtitle {
-  color: #a5a5a5;
-  font-weight: bold;
-  font-style: italic;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-a {
-  font-weight: bold;
-  color: #53714B !important;
 }
 
 // ===== HEADER STYLING ===== 

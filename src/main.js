@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
 
+import "@/assets/global.scss"
+
 import UUID from 'vue-uuid'
 
 Vue.use(UUID)
