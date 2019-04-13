@@ -15,10 +15,20 @@
       >
         <font-awesome-icon class="nav-icon" :icon="section.icon"/>
       </router-link>
-      <div class="nav-link">
-        <font-awesome-icon class="nav-icon" @click="toggle" v-if='!fullscreen' icon="expand-arrows-alt"/>
-        <font-awesome-icon class="nav-icon" @click="toggle" v-if='fullscreen' icon="compress-arrows-alt"/>
-      </div>
+      <!-- <div class="nav-link">
+        <font-awesome-icon
+          class="nav-icon"
+          @click="toggle"
+          v-if="!fullscreen"
+          icon="expand-arrows-alt"
+        />
+        <font-awesome-icon
+          class="nav-icon"
+          @click="toggle"
+          v-if="fullscreen"
+          icon="compress-arrows-alt"
+        />
+      </div>-->
     </div>
   </div>
 </template>
@@ -43,11 +53,17 @@ export default {
           color: "#2c3e50",
           link: "/history"
         },
-        { id: 2, class: "main", icon: "barcode", color: "#a8d673", link: "/" },
+        {
+          id: 2,
+          class: "main",
+          icon: "barcode",
+          color: "#a8d673",
+          link: "/scan"
+        },
         {
           id: 3,
           class: "secondary",
-          icon: "question",
+          icon: "trophy",
           color: "#2c3e50",
           link: "/premium"
         },
@@ -62,14 +78,14 @@ export default {
     };
   },
   methods: {
-    toggle () {
+    toggle() {
       this.$fullscreen.toggle(this.$refs.app, {
         wrap: false,
         callback: this.fullscreenChange
-      })
+      });
     },
-    fullscreenChange (fullscreen) {
-      this.fullscreen = fullscreen
+    fullscreenChange(fullscreen) {
+      this.fullscreen = fullscreen;
     }
   },
   components: {}
@@ -77,8 +93,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// ===== GENERAL APP STYLING ===== 
+// ===== GENERAL APP STYLING =====
 
 #app {
   display: flex;
@@ -87,8 +102,7 @@ export default {
   background-color: white;
 }
 
-
-// ===== HEADER STYLING ===== 
+// ===== HEADER STYLING =====
 
 #header {
   background-color: #0a5c7c;
@@ -109,7 +123,7 @@ export default {
   color: white;
 }
 
-// ===== CONTENT STYLING ===== 
+// ===== CONTENT STYLING =====
 
 #content {
   flex-grow: 1;
@@ -118,11 +132,11 @@ export default {
   flex-direction: row;
 }
 
-#content>* {
+#content > * {
   flex-grow: 1;
 }
 
-// ===== NAVBAR STYLING ===== 
+// ===== NAVBAR STYLING =====
 
 #nav-bar {
   display: flex;
@@ -144,6 +158,5 @@ export default {
   color: #42b983;
 }
 
-// ===== END STYLING ===== 
-
+// ===== END STYLING =====
 </style>

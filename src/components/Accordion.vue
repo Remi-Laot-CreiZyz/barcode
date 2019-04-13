@@ -8,7 +8,7 @@
       class="fu-expander"
     >
       <template v-slot:header>
-        <fu-section-button class="fu-expander-header" :icon='item.icon' :title='item.title'/>
+        <fu-section-button class="fu-expander-header" :icon="item.icon" :title="item.title"/>
       </template>
       <template v-slot:content>
         <div class="fu-expander-content">
@@ -43,7 +43,7 @@ export default {
                   synth nesciunt you probably haven't heard of them accusamus labore VHS.`
         },
         {
-          icon: "plus",
+          icon: "handshake",
           title: "Nos entreprises partenaires",
           text: `Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
                   richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
@@ -96,7 +96,7 @@ export default {
 .fu-expander-content {
   margin-left: 5px;
   margin-right: 5px;
-  border-left: 2px solid #53714B;
+  border-left: 2px solid #53714b;
   padding-left: 0.5rem;
 }
 </style>

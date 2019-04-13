@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import Accordion from '@/components/Accordion.vue'
+import Accordion from "@/components/Accordion.vue";
 
 export default {
-  components : {
-    'v-accordion' : Accordion
+  components: {
+    "v-accordion": Accordion
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

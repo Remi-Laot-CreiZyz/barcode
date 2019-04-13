@@ -30,7 +30,8 @@ import {
   faEnvelope,
   faArrowLeft,
   faExpandArrowsAlt,
-  faCompressArrowsAlt
+  faCompressArrowsAlt,
+  faTrophy
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -46,7 +47,9 @@ library.add(
   faExpandArrowsAlt,
   faCompressArrowsAlt,
   faTimes,
-  faArrowLeft
+  faArrowLeft,
+  faTrophy,
+  faHandshake
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
