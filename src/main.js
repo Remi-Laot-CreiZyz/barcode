@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-
 import "@/assets/global.scss";
 
 import UUID from "vue-uuid";
@@ -60,7 +59,6 @@ import SectionButton from "@/components/SectionButton.vue";
 import Expander from "@/components/Expander.vue";
 import CodeViewer from "@/components/CodeViewer.vue";
 import ProductImage from "@/components/ProductImage.vue";
-import store from "./store";
 
 Vue.component("fu-product-image", ProductImage);
 Vue.component("fu-expander", Expander);
@@ -73,8 +71,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  store,
-
   render: function(h) {
     return h(App);
   }
