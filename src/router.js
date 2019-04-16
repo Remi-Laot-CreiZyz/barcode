@@ -7,6 +7,7 @@ import compte from "./views/compte.vue";
 import history from "./views/history.vue";
 import premium from "./views/premium.vue";
 import details from "@/views/Details.vue";
+import perdu from "@/views/perdu.vue";
 
 Vue.use(Router);
 
@@ -16,6 +17,11 @@ export default new Router({
       path: "/",
       name: "welcome",
       component: Welcome
+    },
+    {
+      path: "/error",
+      name: "error",
+      component: perdu
     },
     {
       path: "/scan",

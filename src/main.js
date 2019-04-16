@@ -4,8 +4,8 @@ import router from "./router";
 
 import "@/assets/global.scss";
 
-import UUID from "vue-uuid";
-Vue.use(UUID);
+import fullscreen from "vue-fullscreen";
+Vue.use(fullscreen);
 
 // Fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -24,7 +24,9 @@ import {
   faArrowLeft,
   faExpandArrowsAlt,
   faCompressArrowsAlt,
-  faTrophy
+  faTrophy,
+  faKey,
+  faSadTear
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -42,7 +44,9 @@ library.add(
   faTimes,
   faArrowLeft,
   faTrophy,
-  faHandshake
+  faHandshake,
+  faKey,
+  faSadTear
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -59,6 +63,8 @@ import SectionButton from "@/components/SectionButton.vue";
 import Expander from "@/components/Expander.vue";
 import CodeViewer from "@/components/CodeViewer.vue";
 import ProductImage from "@/components/ProductImage.vue";
+import Logo from "@/components/Logo.vue";
+import Input from "@/components/Input.vue";
 
 Vue.component("fu-product-image", ProductImage);
 Vue.component("fu-expander", Expander);
@@ -66,6 +72,8 @@ Vue.component("fu-section-button", SectionButton);
 Vue.component("fu-icon-button", IconButton);
 Vue.component("fu-button", Button);
 Vue.component("fu-code-viewer", CodeViewer);
+Vue.component("fu-logo", Logo);
+Vue.component("fu-input", Input);
 
 Vue.config.productionTip = false;
 

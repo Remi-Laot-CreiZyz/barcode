@@ -15,20 +15,6 @@
       >
         <font-awesome-icon class="nav-icon" :icon="section.icon"/>
       </router-link>
-      <!-- <div class="nav-link">
-        <font-awesome-icon
-          class="nav-icon"
-          @click="toggle"
-          v-if="!fullscreen"
-          icon="expand-arrows-alt"
-        />
-        <font-awesome-icon
-          class="nav-icon"
-          @click="toggle"
-          v-if="fullscreen"
-          icon="compress-arrows-alt"
-        />
-      </div>-->
     </div>
   </div>
 </template>
@@ -37,7 +23,6 @@
 export default {
   data() {
     return {
-      fullscreen: false,
       sections: [
         {
           id: 0,
@@ -76,19 +61,7 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    toggle() {
-      this.$fullscreen.toggle(this.$refs.app, {
-        wrap: false,
-        callback: this.fullscreenChange
-      });
-    },
-    fullscreenChange(fullscreen) {
-      this.fullscreen = fullscreen;
-    }
-  },
-  components: {}
+  }
 };
 </script>
 
