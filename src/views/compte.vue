@@ -1,11 +1,15 @@
 <template>
   <div class="content">
-      <p>Ceci est la page Compte !</p>
-      <fu-button>GO!</fu-button>
+      <img class="child" src='../image/logo.png'/>
+      <h1 class="fu-title">Bienvenue chez Follow'Up</h1>
+      <h2 class="fu-h2">Devenez consomm'acteurs</h2>
+      <br>
       <fu-button>Connexion</fu-button>
-      <fu-button><font-awesome-icon icon="question"/></fu-button>
+      <br>
+      <a>Vous n'avez pas de compte ?</a>
+      <a> S'enregistrer</a>
+      <br><br><br>
       <fu-icon-button icon="times"/>
-      <fu-icon-button icon="question"/>
       <fu-section-button icon="question" title="FAQ"/>
       <fu-section-button icon="lock" title="Déconnexion"/>
       <fu-expander title="expand / collapse" icon="question">
@@ -49,5 +53,17 @@ export default {
 <style lang="scss" scoped>
 .content {
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.child{
+  width: 30%;
+  height: auto;
+}
+.fu-h2{
+  color: #b9b7b6;
+  text-align: center;
+  font-size: 1.1em;
 }
 </style>

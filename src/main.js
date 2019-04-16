@@ -1,15 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import Vuex from "vuex";
-import "./registerServiceWorker";
 
-Vue.use(Vuex);
 
 import "@/assets/global.scss";
-
-import fullscreen from "vue-fullscreen";
-Vue.use(fullscreen);
 
 import UUID from "vue-uuid";
 Vue.use(UUID);
