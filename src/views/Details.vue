@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <div class="details-line">
-      <fu-icon-button v-on:click='goBack()' icon="arrow-left"/>
+      <fu-icon-button v-on:click="goBack()" icon="arrow-left"/>
     </div>
-    <fu-product-image :image='product.image'/>
+    <fu-product-image :image="product.image"/>
     <div class="details-line">
       <div class="details-label">Produit</div>
       <div class="details-entry">
@@ -19,7 +19,7 @@
     <div class="details-line">
       <div class="details-label">Code Barre</div>
       <div class="details-entry">
-        <fu-code-viewer class="codebar" :code='product.code'/>
+        <fu-code-viewer class="codebar" :code="product.code"/>
       </div>
     </div>
   </div>
@@ -32,13 +32,13 @@ export default {
   data() {
     return {
       product: {}
-    }
+    };
   },
   created() {
     this.product = ProductService.getProductDetails(this.$route.params.code);
   },
-  watch : {
-    '$route' (to) {
+  watch: {
+    $route(to) {
       this.product = ProductService.getProductDetails(to.params.code);
     }
   },
@@ -46,7 +46,7 @@ export default {
     goBack() {
       this.$router.go(-1);
     }
-  },
+  }
 };
 </script>
 
@@ -56,23 +56,24 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 0.5rem;
+  min-height: fit-content;
 }
 .details-line {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top:    0.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 .details-label {
   font-size: 0.75rem;
-  color: #53714B;
+  color: #53714b;
 }
 .details-entry {
   padding-left: 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;
-  border-left: 2px solid #53714B;
+  border-left: 2px solid #53714b;
   display: flex;
   flex-direction: row;
 }

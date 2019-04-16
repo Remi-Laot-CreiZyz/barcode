@@ -30,6 +30,7 @@ export default {};
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  min-height: fit-content;
 }
 
 h2 {
@@ -42,5 +43,6 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: fit-content;
 }
 </style>

@@ -1,16 +1,10 @@
 <template>
   <div class="content">
-    <a @click='clearHistory()'>supprimer mon historique</a>
+    <a @click="clearHistory()">supprimer mon historique</a>
     <div class="list">
-      <div
-        class="item" 
-        v-for="item in history"
-        v-bind:key="item"
-      >
+      <div class="item" v-for="item in history" v-bind:key="item">
         <fu-code-viewer :code="parseCode(item)"/>
-        <router-link :to="{ name: 'details', params: { 'code' : item } }">
-          revoir
-        </router-link>
+        <router-link :to="{ name: 'details', params: { 'code' : item } }">revoir</router-link>
       </div>
     </div>
   </div>
@@ -24,7 +18,7 @@ export default {
   data() {
     return {
       history: LocalStorageService.getHistory()
-    }
+    };
   },
   methods: {
     parseCode(code) {
@@ -34,14 +28,15 @@ export default {
       this.history = [];
       LocalStorageService.saveHistory([]);
     }
-  },
-}
+  }
+};
 </script>
 
 
 <style scoped>
 .content {
   padding: 0.5rem;
+  min-height: fit-content;
 }
 .list {
   display: flex;

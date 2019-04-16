@@ -42,6 +42,7 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  min-height: fit-content;
 }
 .fruits {
   width: 100%;

@@ -23,6 +23,7 @@ export default {
   align-items: center;
   justify-content: center;
   color: #a5a5a5;
+  min-height: fit-content;
 }
 .icon {
   font-size: 10rem;

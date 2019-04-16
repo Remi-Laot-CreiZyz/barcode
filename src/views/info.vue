@@ -17,5 +17,6 @@ export default {
 <style lang="scss" scoped>
 .content {
   padding: 0.5rem;
+  min-height: fit-content;
 }
 </style>
