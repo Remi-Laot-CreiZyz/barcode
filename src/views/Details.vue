@@ -3,7 +3,7 @@
     <div class="details-line">
       <fu-icon-button v-on:click="goBack()" icon="arrow-left"/>
     </div>
-    <fu-product-image :image="product.image"/>
+    <fu-product-image/>
     <div class="details-line">
       <div class="details-label">Produit</div>
       <div class="details-entry">
@@ -20,6 +20,24 @@
       <div class="details-label">Code Barre</div>
       <div class="details-entry">
         <fu-code-viewer class="codebar" :code="product.code"/>
+      </div>
+    </div>
+    <div class="details-line">
+      <div class="details-label">Distance</div>
+      <div class="details-entry">
+        <div>{{Math.floor(product.distance / 1000)}} Km</div>
+      </div>
+    </div>
+    <div class="details-line">
+      <div class="details-label">Longitude</div>
+      <div class="details-entry">
+        <div>{{product.location.lon}}</div>
+      </div>
+    </div>
+    <div class="details-line">
+      <div class="details-label">Latitude</div>
+      <div class="details-entry">
+        <div>{{product.location.lat}}</div>
       </div>
     </div>
   </div>

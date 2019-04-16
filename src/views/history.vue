@@ -1,6 +1,8 @@
 <template>
   <div class="content">
-    <a @click="clearHistory()">supprimer mon historique</a>
+    <div>
+      <a @click="clearHistory()">supprimer mon historique</a>
+    </div>
     <div class="list">
       <div class="item" v-for="item in history" v-bind:key="item">
         <fu-code-viewer :code="parseCode(item)"/>
@@ -15,18 +17,20 @@ import LocalStorageService from "@/api/LocalStorageService.js";
 import ProductService from "@/api/ProductService.js";
 
 export default {
-  data() {
-    return {
-      history: LocalStorageService.getHistory()
-    };
+  computed: {
+    history() {
+      var history = LocalStorageService.get("fu-history");
+      if (typeof history == "undefined") history = [];
+      return history;
+    }
   },
   methods: {
     parseCode(code) {
       return ProductService.parseCode(code);
     },
     clearHistory() {
-      this.history = [];
-      LocalStorageService.saveHistory([]);
+      LocalStorageService.delete("fu-history");
+      this.$router.go();
     }
   }
 };

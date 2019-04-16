@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <img v-if='image !== ""' :src='image'/>
-    <div v-if='image === ""' class="default">
+    <div class="default">
       <font-awesome-icon icon="barcode"/>
     </div>
   </div>

@@ -16,11 +16,12 @@
     "bootstrap-vue": "^2.0.0-rc.13",
     "idb": "^4.0.3",
     "quagga": "^0.12.1",
+    "random-location": "^1.0.12",
     "register-service-worker": "^1.5.2",
+    "serve": "^11.0.0",
     "vue": "^2.5.22",
     "vue-fullscreen": "^2.1.5",
-    "vue-router": "^3.0.1",
-    "serve": "^11.0.0"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^3.4.0",
