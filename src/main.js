@@ -26,7 +26,8 @@ import {
   faCompressArrowsAlt,
   faTrophy,
   faKey,
-  faSadTear
+  faSadTear,
+  faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -46,7 +47,8 @@ library.add(
   faTrophy,
   faHandshake,
   faKey,
-  faSadTear
+  faSadTear,
+  faChevronRight
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -65,7 +67,9 @@ import CodeViewer from "@/components/CodeViewer.vue";
 import ProductImage from "@/components/ProductImage.vue";
 import Logo from "@/components/Logo.vue";
 import Input from "@/components/Input.vue";
+import ListItem from "@/components/ListItem.vue";
 
+Vue.component("fu-list-item", ListItem);
 Vue.component("fu-product-image", ProductImage);
 Vue.component("fu-expander", Expander);
 Vue.component("fu-section-button", SectionButton);

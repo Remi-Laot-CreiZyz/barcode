@@ -1,13 +1,17 @@
 <template>
   <div class="content">
-    <div>
-      <a @click="clearHistory()">supprimer mon historique</a>
-    </div>
-    <div class="list">
-      <div class="item" v-for="item in history" v-bind:key="item">
-        <fu-code-viewer :code="parseCode(item)"/>
-        <router-link :to="{ name: 'details', params: { 'code' : item } }">revoir</router-link>
+    <template v-if="history.length > 0">
+      <div class="list">
+        <div class="fu-title">Votre historique:</div>
+        <fu-list-item v-for="item in history" v-bind:key="item" :code="item"/>
       </div>
+      <div class="clear">
+        <a @click="clearHistory()">supprimer mon historique</a>
+      </div>
+    </template>
+    <div v-if="history.length == 0" class="empty">
+      <font-awesome-icon class="icon" icon="history"/>
+      <div class="fu-subtitle">Votre historique est vide</div>
     </div>
   </div>
 </template>
@@ -46,12 +50,20 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.item {
-  padding: 0.5rem;
-  border-bottom: 1px solid #a5a5a5;
+.empty {
+  color: #a5a5a5;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100%;
+}
+.icon {
+  font-size: 5rem;
+}
+.clear {
+  width: fit-content;
+  margin: auto;
+  margin-top: 0.75rem;
 }
 </style>

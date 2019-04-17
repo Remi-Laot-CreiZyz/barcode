@@ -349,6 +349,17 @@ export default {
       return this.defaultCode();
     }
   },
+  isValid(product) {
+    return (
+      typeof product.image != "undefined" &&
+      typeof product.name != "undefined" &&
+      typeof product.company != "undefined" &&
+      typeof product.code != "undefined" &&
+      typeof product.location != "undefined" &&
+      typeof product.location.lon != "undefined" &&
+      typeof product.location.lat != "undefined"
+    );
+  },
   getProductDetails(code) {
     if (code) {
       if (typeof store[code] != "undefined") {
