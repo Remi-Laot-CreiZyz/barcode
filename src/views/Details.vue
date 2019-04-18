@@ -3,7 +3,7 @@
     <div class="details-line">
       <fu-icon-button v-on:click="goBack()" icon="arrow-left"/>
     </div>
-    <fu-product-image/>
+    <fu-product-image :image="product.image"/>
     <div class="details-line">
       <div class="details-label">Produit</div>
       <div class="details-entry">
@@ -38,6 +38,12 @@
       <div class="details-label">Latitude</div>
       <div class="details-entry">
         <div>{{product.location.lat}}</div>
+      </div>
+    </div>
+    <div class="details-line">
+      <div class="details-label">Informations d'élevage</div>
+      <div class="details-entry">
+        <div>{{product.divers}}</div>
       </div>
     </div>
   </div>

@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="default">
-      <font-awesome-icon icon="barcode"/>
+      <template v-if="image">
+        <img :src="image">
+      </template>
+      <template v-if="!image">
+        <font-awesome-icon icon="barcode"/>
+      </template>
     </div>
   </div>
 </template>
