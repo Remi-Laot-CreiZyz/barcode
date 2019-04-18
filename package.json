@@ -15,7 +15,6 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.13",
     "idb": "^4.0.3",
-    "quagga": "^0.12.1",
     "random-location": "^1.0.12",
     "register-service-worker": "^1.5.2",
     "serve": "^11.0.0",
