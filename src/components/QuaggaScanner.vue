@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import Quagga from "quagga";
+import Quagga from "@/api/quagga.js";
+// import Quagga from "quagga";
 
 const TB_BORDER = 0.35;
 const LR_BORDER = 0.15;
@@ -66,59 +67,48 @@ function initQuagga(width, height, onDetected, onProcessed) {
 
 export default {
   name: "QuaggaScanner",
-  mounted : function() {
+  mounted: function() {
+    this.needInit = false;
     initQuagga(
       this.getWidth(),
       this.getHeight(),
       this.onDetected.bind(this),
       this.onProcessed.bind(this)
     );
-    setTimeout((() => {
+    setTimeout(() => {
       Quagga.start();
-      this.drawBox();
-    }).bind(this), 500);
+    }, 1000);
   },
-  beforeDestroy : function() {
+  beforeDestroy: function() {
     Quagga.stop();
   },
   methods: {
-    getWidth : function() {
+    getWidth: function() {
       return this.$refs.interactive.clientWidth;
     },
-    getHeight : function() {
+    getHeight: function() {
       return this.$refs.interactive.clientHeight;
     },
-    drawBox : function() {
+    drawBox: function() {
       var drawingCtx = Quagga.canvas.ctx.overlay;
       var drawingCanvas = Quagga.canvas.dom.overlay;
       var width = parseInt(drawingCanvas.getAttribute("width"));
       var height = parseInt(drawingCanvas.getAttribute("height"));
       drawingCtx.fillStyle = "rgba(0, 0, 0, 0.5)";
-      var W = [
-        0,
-        width * LR_BORDER,
-        width * (1 - LR_BORDER),
-        width
-      ];
-      var H = [
-        0,
-        height * TB_BORDER,
-        height * (1 - TB_BORDER),
-        height
-      ];
+      var W = [0, width * LR_BORDER, width * (1 - LR_BORDER), width];
+      var H = [0, height * TB_BORDER, height * (1 - TB_BORDER), height];
       drawingCtx.fillRect(W[0], H[0], W[3] - W[0], H[1] - H[0]);
       drawingCtx.fillRect(W[0], H[2], W[3] - W[0], H[3] - H[2]);
       drawingCtx.fillRect(W[0], H[1], W[1] - W[0], H[2] - H[1]);
       drawingCtx.fillRect(W[2], H[1], W[3] - W[2], H[2] - H[1]);
     },
-    onProcessed : function(result) {
+    onProcessed: function(result) {
       if (result) {
         var drawingCtx = Quagga.canvas.ctx.overlay;
         var drawingCanvas = Quagga.canvas.dom.overlay;
         var width = parseInt(drawingCanvas.getAttribute("width"));
         var height = parseInt(drawingCanvas.getAttribute("height"));
         drawingCtx.clearRect(0, 0, width, height);
-        this.drawBox();
         if (result.box) {
           Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, {
             color: "#00F",
@@ -135,11 +125,11 @@ export default {
         }
       }
     },
-    onDetected : function(result) {
+    onDetected: function(result) {
       if (result) {
         this.$emit("scanned", result.codeResult.code);
       }
-    },
+    }
   }
 };
 </script>
